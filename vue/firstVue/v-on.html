@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 08 - Vue内置指令-事件指令-v-on指令-键盘事件【应用】</title>
+</head>
+<body>
+
+    <!--第一步：定义vuejs管理渲染的范围-->
+    <div id="app">
+        <input type="text" v-on:keydown="fun1($event)">
+        <input type="text" v-on:keydown="fun2('good')">
+        <input type="text" v-model="value" v-on:keydown="fun3('good',$event)">
+
+        <p>你当前输入的键码是：{{keyCode}}</p>
+    </div>
+
+    <!-- 第二步：导入vue.js文件 -->
+    <script src="js/vuejs-2.5.16.js"></script>   
+	 
+    <script>
+          // 第三步：定义vuejs对象，开始进行视图和数据的渲染
+          // 键盘事件：keydown keyup keypress --- 大家肯定会在txtarea会做一个字数限制的案例，就会需要键盘事件
+          // 或者需要通过建码组合的时候就用户此事件类型。
+          var app = new Vue({
+			  el:"#app",
+			  data:{
+				  keyCode:0,
+				  value:"",
+			  },
+			  methods:{
+				  fun1:function(event){
+					  this.keyCode=event.keyCode;
+				  },
+				 fun2:function(val){
+					  console.log(val)
+				  }
+			  }
+		  }) ;
+    </script>
+</body>
+</html>

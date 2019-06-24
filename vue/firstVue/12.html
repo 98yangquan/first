@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11 - Vue内置指令-文本指令-v-text v-html指令【应用】</title>
+</head>
+<body>
+
+    <!--第一步：定义vuejs管理渲染的范围-->
+	<div id="app">
+		<input :value="title" />
+	</div>
+
+    <!-- 第二步：导入vue.js文件 -->
+    <script src="js/vuejs-2.5.16.js"></script>    
+    <script>
+		alert("aa");
+          // 第三步：定义vuejs对象，开始进行视图和数据的渲染
+          var app = new Vue({
+              el:"#app",
+              data:{
+                  title:"Hello world!",
+                  content:"<strong>Hello world</strong>"
+              }
+          }) ;
+
+    </script>
+</body>
+</html>

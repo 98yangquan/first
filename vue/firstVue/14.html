@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		html部分
+		<div id="app">
+			<p v-for="(value,index) in names">{{index}}==========={{value}}</p>
+		</div>
+
+	<br />
+		<div id="app1">
+			{{user}}
+			<p v-for="(value,key) in user">{{value}}====={{key}}</p>
+		</div>
+		
+		<script src="js/vuejs-2.5.16.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					title:"Hello world!",
+					names:["zhangsan","lisi","wangwu"]
+				}
+			}) ;
+			
+			var app1 = new Vue({
+				el:"#app1",
+				data:{
+					title:"Hello world!",
+					user:{id:1,username:"徐承飞老师",age:32}
+				}
+			}) ;
+
+		</script>
+	</body>
+</html>

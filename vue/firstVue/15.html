@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 16 - Vue内置指令 - 条件指令 - v-if v-else-if v-else 指令【应用】</title>
+</head>
+<body>
+
+    <!--第一步：定义vuejs管理渲染的范围-->
+    <div id="app">
+       请输入年龄：<input type="text" v-model="age">
+        <p>
+            <span v-if="age>=0 && age<=10" >儿童0-10</span>
+            <span v-else-if="age>=11 && age<=18">少年11-18</span>
+            <span v-else-if="age>=19 && age<=35">青年19-35</span>
+            <span v-else-if="age>=36 && age<=55">中年36-55</span>
+            <span v-else>老年</span>
+        </p>
+    </div>
+
+    <!-- 第二步：导入vue.js文件 -->
+    <script src="js/vue.js"></script>
+    <script>
+          //需求：用户输入步同年龄阶段，显示这个阶段对应的时期。
+          // 第三步：定义vuejs对象，开始进行视图和数据的渲染
+          var app = new Vue({
+              el:"#app",
+              data:{
+                  age:0
+              }
+          }) ;
+
+    </script>
+</body>
+</html>

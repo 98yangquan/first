@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 09 - Vue内置指令-事件指令-v-on指令-事件修饰符</title>
+</head>
+
+<body>
+    <!--第一步：定义vuejs管理渲染的范围-->
+    <div id="app">
+        <div class="parent" v-on:click="divclick">
+            <button @click.stop="btnclick">点我</button>
+        </div>
+    </div>
+
+    <!-- 第二步：导入vue.js文件 -->
+    <script src="js/vuejs-2.5.16.js"></script>    
+    <script>
+
+          // 第三步：定义vuejs对象，开始进行视图和数据的渲染
+          var app = new Vue({
+              el:"#app",
+              data:{title:"Hello world!"},
+              methods:{
+                  divclick : function(){
+                      console.log("1-------------div parent");
+                  },
+
+                  btnclick : function(){
+                      console.log("2-------------btn click children");
+                  }
+
+              }
+          }) ;
+
+    </script>
+	
+</body>
+</html>
